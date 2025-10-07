@@ -1,6 +1,10 @@
 import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import certDeloitte from "@/assets/cert-deloitte.jpg";
+import certTelstra from "@/assets/cert-telstra.jpg";
+import certNYJobs from "@/assets/cert-nyjobs.jpg";
 
 interface Certification {
   title: string;
@@ -8,9 +12,44 @@ interface Certification {
   skills: string[];
   status: string;
   url?: string;
+  image?: string;
 }
 
 const certifications: Certification[] = [
+  {
+    title: "Cyber Job Simulation",
+    issuer: "Deloitte (via Forage)",
+    skills: [
+      "Cybersecurity practical tasks",
+      "Real-world security scenarios",
+      "Industry best practices",
+    ],
+    status: "Certified",
+    image: certDeloitte,
+  },
+  {
+    title: "Cybersecurity Job Simulation",
+    issuer: "Telstra (via Forage)",
+    skills: [
+      "Responding to a malware attack",
+      "Analysing the attack",
+      "Technical mitigation of malware attacks",
+      "Incident Postmortem",
+    ],
+    status: "Certified",
+    image: certTelstra,
+  },
+  {
+    title: "Cybersecurity Job Simulation",
+    issuer: "NY Jobs CEO Council (via Forage)",
+    skills: [
+      "Design a phishing email simulation",
+      "Interpret phishing simulation results",
+      "Security awareness training",
+    ],
+    status: "Certified",
+    image: certNYJobs,
+  },
   {
     title: "Introduction to Cybersecurity Awareness",
     issuer: "HP LIFE Foundation",
@@ -68,9 +107,9 @@ const Certifications = () => {
 
         {/* Current Certifications */}
         <div className="max-w-4xl mx-auto space-y-6 mb-12">
-          {certifications.map((cert) => (
+          {certifications.map((cert, idx) => (
             <Card
-              key={cert.title}
+              key={`${cert.title}-${idx}`}
               className="card-gradient border-border hover:border-secondary/50 transition-all duration-300 group"
             >
               <CardHeader>
@@ -99,6 +138,26 @@ const Certifications = () => {
                 </div>
               </CardHeader>
               <CardContent>
+                {cert.image && (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="mb-4 cursor-pointer overflow-hidden rounded-lg border border-border hover:border-secondary/50 transition-all">
+                        <img 
+                          src={cert.image} 
+                          alt={`${cert.title} certificate`}
+                          className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl">
+                      <img 
+                        src={cert.image} 
+                        alt={`${cert.title} certificate`}
+                        className="w-full h-auto"
+                      />
+                    </DialogContent>
+                  </Dialog>
+                )}
                 <ul className="space-y-2">
                   {cert.skills.map((skill, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
