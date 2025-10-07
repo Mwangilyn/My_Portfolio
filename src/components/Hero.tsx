@@ -56,6 +56,21 @@ const Hero = () => {
             >
               Certifications
             </Button>
+            <Button 
+              asChild
+              variant="outline"
+              className="border-secondary/30 hover:bg-secondary/10 hover:border-secondary/50 hover:scale-105 transition-all duration-300"
+            >
+              <a 
+                href="https://www.linkedin.com/in/lynette-irungu-" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn Profile
+              </a>
+            </Button>
           </div>
           
           <div className="flex items-center justify-center gap-4">
@@ -63,17 +78,19 @@ const Hero = () => {
               href="https://github.com/Mwangilyn" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card hover:bg-primary/10 border border-border hover:border-primary/50 transition-all duration-300 glow-cyan"
+              className="p-3 rounded-full bg-card hover:bg-primary/10 border border-border hover:border-primary/50 transition-all duration-300 hover:scale-110 glow-cyan group"
+              aria-label="GitHub Profile"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </a>
             <a 
               href="https://www.linkedin.com/in/lynette-irungu-" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card hover:bg-primary/10 border border-border hover:border-primary/50 transition-all duration-300 glow-cyan"
+              className="p-3 rounded-full bg-card hover:bg-secondary/10 border border-border hover:border-secondary/50 transition-all duration-300 hover:scale-110 group animate-glow-pulse"
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </a>
           </div>
         </div>
