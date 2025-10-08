@@ -9,35 +9,46 @@ interface Project {
   tools: string[];
   impact: string;
   icon: any;
+  url?: string;
 }
 
 const projects: Project[] = [
   {
+    title: "NetHunter Vigil",
+    description: "TypeScript-based network monitoring and security vigilance tool. Real-time threat detection and network analysis application with modern web technologies.",
+    tools: ["TypeScript", "React", "Network Security", "Real-time Monitoring"],
+    impact: "Active development of comprehensive network security monitoring solution.",
+    icon: Shield,
+    url: "https://github.com/Mwangilyn/nethunter-vigil",
+  },
+  {
+    title: "Penetration Test Reports",
+    description: "Comprehensive repository of offensive security techniques and penetration testing scripts. Contains detailed documentation of security assessments and vulnerability testing methodologies.",
+    tools: ["Penetration Testing", "Security Assessment", "Ethical Hacking"],
+    impact: "Professional documentation of offensive security practices with explicit authorization requirements.",
+    icon: Terminal,
+    url: "https://github.com/Mwangilyn/Penetration-Test-Reports",
+  },
+  {
+    title: "CTF Walkthroughs",
+    description: "Detailed writeups and solutions for Capture The Flag challenges from platforms like TryHackMe and HackTheBox. Comprehensive documentation of problem-solving approaches and security techniques.",
+    tools: ["CTF", "TryHackMe", "HackTheBox", "Security Analysis"],
+    impact: "Educational resource demonstrating practical cybersecurity problem-solving skills.",
+    icon: Activity,
+    url: "https://github.com/Mwangilyn/CTF-Walkthroughs",
+  },
+  {
     title: "Intrusion Detection Lab using Snort",
-    description: "Set up Snort IDS on Kali Linux to monitor suspicious traffic from a simulated attack on Metasploitable2. Created and tuned custom Snort rules to detect brute force attempts and port scans.",
+    description: "Set up Snort IDS on Kali Linux to monitor suspicious traffic from simulated attacks. Created and tuned custom Snort rules to detect brute force attempts and port scans.",
     tools: ["Snort", "Kali Linux", "Metasploitable2", "Wireshark"],
     impact: "Demonstrated ability to detect and log malicious behavior in real time.",
     icon: Shield,
-  },
-  {
-    title: "Network Vulnerability Assessment",
-    description: "Scanned a virtual network for open ports and vulnerabilities using Nmap and Nikto. Analyzed results to identify outdated software and misconfigurations.",
-    tools: ["Nmap", "Nikto", "Kali Linux"],
-    impact: "Strengthened understanding of network hardening techniques.",
-    icon: Terminal,
   },
   {
     title: "SIEM Analysis using Splunk",
     description: "Created dashboards to monitor and visualize log data from Windows Server and Ubuntu systems. Simulated brute force login attempts and analyzed log patterns.",
     tools: ["Splunk", "Windows Server", "Ubuntu"],
     impact: "Gained real-world experience in log correlation and security alerting.",
-    icon: Activity,
-  },
-  {
-    title: "Packet Sniffing and Analysis with Wireshark",
-    description: "Captured and analyzed HTTP, DNS, and FTP traffic on a test network. Identified potential data leakage and suspicious communications.",
-    tools: ["Wireshark", "Windows", "Ubuntu"],
-    impact: "Improved traffic analysis skills and understanding of normal vs. abnormal behavior.",
     icon: Database,
   },
 ];
@@ -63,18 +74,21 @@ const Projects = () => {
             return (
               <Card
                 key={project.title}
-                className="card-gradient border-border hover:border-primary/50 transition-all duration-300 cursor-pointer group"
+                className="card-gradient border-border hover:border-secondary/50 hover:shadow-[0_0_30px_hsl(280,85%,65%,0.3)] transition-all duration-300 cursor-pointer group"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => project.url && window.open(project.url, '_blank')}
               >
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
-                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="p-3 rounded-lg bg-secondary/10 border border-secondary/30 group-hover:bg-secondary/20 group-hover:animate-glow-pulse transition-all duration-300">
+                      <Icon className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" />
                     </div>
-                    <ExternalLink className={`w-5 h-5 transition-all duration-300 ${hoveredIndex === index ? 'text-primary translate-x-1 -translate-y-1' : 'text-muted-foreground'}`} />
+                    {project.url && (
+                      <ExternalLink className={`w-5 h-5 transition-all duration-300 ${hoveredIndex === index ? 'text-secondary translate-x-1 -translate-y-1 animate-bounce-subtle' : 'text-muted-foreground'}`} />
+                    )}
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                  <CardTitle className="text-xl group-hover:text-secondary transition-colors">
                     {project.title}
                   </CardTitle>
                   <CardDescription className="text-muted-foreground leading-relaxed">

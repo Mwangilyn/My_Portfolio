@@ -8,9 +8,12 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-950/20 to-cyan-950/20">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMGZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bS0yIDJ2Mmgydi0yaC0yem0wLTJ2Mmgydi0yaC0yem0tMiAydjJoMnYtMmgtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+      {/* Animated gradient background with purple cybersecurity theme */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(270,40%,8%)] via-[hsl(280,60%,15%)] to-[hsl(270,50%,20%)]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNhODU5ZmYiIGZpbGwtb3BhY2l0eT0iMC4wOCI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bS0yIDJ2Mmgydi0yaC0yem0wLTJ2Mmgydi0yaC0yem0tMiAydjJoMnYtMmgtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+        {/* Purple glow orbs */}
+        <div className="absolute top-20 left-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
 
       {/* Content */}
@@ -45,21 +48,21 @@ const Hero = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <Button 
               onClick={() => scrollToSection('projects')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 glow-cyan"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-110 transition-all duration-300 animate-glow-pulse-cyan group"
             >
-              View Projects
+              <span className="group-hover:animate-bounce-subtle">View Projects</span>
             </Button>
             <Button 
               onClick={() => scrollToSection('certifications')}
               variant="outline"
-              className="border-primary/30 hover:bg-primary/10"
+              className="border-primary/30 hover:bg-primary/10 hover:border-primary hover:scale-110 transition-all duration-300"
             >
               Certifications
             </Button>
             <Button 
               asChild
               variant="outline"
-              className="border-secondary/30 hover:bg-secondary/10 hover:border-secondary/50 hover:scale-105 transition-all duration-300"
+              className="border-secondary/30 hover:bg-secondary/10 hover:border-secondary hover:scale-110 transition-all duration-300 animate-glow-pulse"
             >
               <a 
                 href="https://www.linkedin.com/in/lynette-irungu-" 
