@@ -19,10 +19,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in">
-          <div className="mb-4 text-sm text-muted-foreground flex items-center justify-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-primary animate-glow-pulse"></span>
-            Nairobi, Kenya
-          </div>
           
           <h1 className="text-6xl md:text-8xl font-bold mb-4">
             <span className="text-gradient">Lynette</span>
@@ -65,7 +61,7 @@ const Hero = () => {
               className="border-secondary/30 hover:bg-secondary/10 hover:border-secondary hover:scale-110 transition-all duration-300 animate-glow-pulse"
             >
               <a 
-                href="https://www.linkedin.com/in/lynette-irungu-" 
+                href="https://www.linkedin.com/in/lynette-irungu23" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -87,7 +83,7 @@ const Hero = () => {
               <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </a>
             <a 
-              href="https://www.linkedin.com/in/lynette-irungu-" 
+              href="https://www.linkedin.com/in/lynette-irungu23" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card hover:bg-secondary/10 border border-border hover:border-secondary/50 transition-all duration-300 hover:scale-110 group animate-glow-pulse"

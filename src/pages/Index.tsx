@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import Certifications from "@/components/Certifications";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
+import ContactChat from "@/components/ContactChat";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Experience />
       <Certifications />
       <Footer />
+      <ContactChat />
     </main>
   );
 };

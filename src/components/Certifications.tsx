@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import certDeloitte from "@/assets/cert-deloitte.jpg";
 import certTelstra from "@/assets/cert-telstra.jpg";
 import certNYJobs from "@/assets/cert-nyjobs.jpg";
+import certTryHackMe from "@/assets/cert-tryhackme.jpg";
 
 interface Certification {
   title: string;
@@ -49,6 +50,18 @@ const certifications: Certification[] = [
     ],
     status: "Certified",
     image: certNYJobs,
+  },
+  {
+    title: "Pre Security Learning Path",
+    issuer: "TryHackMe",
+    skills: [
+      "Network fundamentals",
+      "Linux basics",
+      "Windows fundamentals",
+      "How the web works",
+    ],
+    status: "Certified",
+    image: certTryHackMe,
   },
   {
     title: "Introduction to Cybersecurity Awareness",
